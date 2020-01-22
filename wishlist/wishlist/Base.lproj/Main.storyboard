@@ -27,7 +27,7 @@
                                                 <color key="textColor" red="0.28627450980000002" green="0.2901960784" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ux5-jX-fxc">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ux5-jX-fxc">
                                                 <rect key="frame" x="0.0" y="26" width="334" height="94"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="60"/>
@@ -47,7 +47,7 @@
                                                 <color key="textColor" red="0.28627450980392155" green="0.29019607843137252" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lH5-No-mrO">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lH5-No-mrO">
                                                 <rect key="frame" x="0.0" y="26" width="334" height="94"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="60"/>
@@ -60,13 +60,16 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szx-SY-L4O" customClass="RoundedButton" customModule="wishlist" customModuleProvider="target">
                                         <rect key="frame" x="294" y="290" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.058823529409999999" green="0.047058823530000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.058999999999999997" green="0.047058823530000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Dv4-HA-pCC"/>
                                             <constraint firstAttribute="width" constant="60" id="iaQ-Nz-D3z"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
                                         <state key="normal" title="="/>
+                                        <connections>
+                                            <action selector="calculateBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i8O-7d-VF1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.12156862745098039" green="0.12549019607843137" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
@@ -114,6 +117,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
                                         <state key="normal" title="+"/>
+                                        <connections>
+                                            <action selector="saveBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BUd-NX-q3u"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1215686275" green="0.12549019610000001" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
@@ -136,6 +142,9 @@
                                 <state key="normal" title="Clear all fields">
                                     <color key="titleColor" red="0.28627450980000002" green="0.2901960784" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="clearBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfZ-QF-5ZT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -152,6 +161,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Wishlist" id="cFP-0K-sWQ"/>
+                    <connections>
+                        <outlet property="calculateBtn" destination="szx-SY-L4O" id="Yux-eu-Deu"/>
+                        <outlet property="clearBtn" destination="Yth-Wa-PLi" id="cQh-ie-GLR"/>
+                        <outlet property="hoursLabel" destination="y1b-XZ-95K" id="6bb-UK-TTC"/>
+                        <outlet property="priceTextfield" destination="lH5-No-mrO" id="znp-BS-y3x"/>
+                        <outlet property="saveBtn" destination="mVz-t2-7vc" id="L6N-kR-Adk"/>
+                        <outlet property="wageTextfield" destination="ux5-jX-fxc" id="2Cx-r4-gON"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
