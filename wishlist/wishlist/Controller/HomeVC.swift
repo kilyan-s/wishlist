@@ -80,6 +80,14 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func clearBtnPressed(_ sender: Any) {
+        wageTextfield.text = ""
+        priceTextfield.text = ""
+        updateCalcBtn(isEnabled: false)
+        
+        hoursLabel.text = "0"
+        updateSaveBtn(isHidden: true)
+        
+        updateClearBtnState(isHidden: true)
     }
     
 }
