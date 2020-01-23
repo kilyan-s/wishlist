@@ -187,7 +187,7 @@
             <objects>
                 <viewController storyboardIdentifier="MyProductsVC" id="bMw-TP-HSL" customClass="MyProductsVC" customModule="wishlist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kPC-tC-bzS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="751"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="750.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CHf-fd-7of">
