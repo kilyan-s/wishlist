@@ -155,6 +155,14 @@ class HomeVC: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    @IBAction func listProductPressed(_ sender: Any) {
+        performSegue(withIdentifier: "wishlistToProduct", sender: self)
+        
+//        guard let myProductsVC = storyboard?.instantiateViewController(withIdentifier: "MyProductsVC") else { return }
+//        myProductsVC.modalPresentationStyle = .currentContext
+//        navigationController?.pushViewController(myProductsVC, animated: true)
+    }
+    
     @IBAction func clearBtnPressed(_ sender: Any) {
         clearFields()
     }

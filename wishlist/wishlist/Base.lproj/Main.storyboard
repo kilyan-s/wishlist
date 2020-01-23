@@ -163,6 +163,9 @@
                     <navigationItem key="navigationItem" title="Wishlist" largeTitleDisplayMode="always" id="cFP-0K-sWQ">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="organize" id="7dy-Xo-Acr">
                             <color key="tintColor" red="0.28627450980392155" green="0.29019607843137252" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="listProductPressed:" destination="BYZ-38-t0r" id="gbM-yZ-NEB"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -172,11 +175,28 @@
                         <outlet property="priceTextfield" destination="lH5-No-mrO" id="znp-BS-y3x"/>
                         <outlet property="saveBtn" destination="mVz-t2-7vc" id="L6N-kR-Adk"/>
                         <outlet property="wageTextfield" destination="ux5-jX-fxc" id="2Cx-r4-gON"/>
+                        <segue destination="bMw-TP-HSL" kind="show" identifier="wishlistToProduct" id="UeA-lP-tFU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--My products-->
+        <scene sceneID="dpa-2y-Cxs">
+            <objects>
+                <viewController storyboardIdentifier="MyProductsVC" id="bMw-TP-HSL" customClass="MyProductsVC" customModule="wishlist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kPC-tC-bzS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="750.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3wl-gh-2NW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My products" largeTitleDisplayMode="always" id="Epw-VE-yql"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mzx-5o-zXk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1851" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NJP-Jb-TCs">
