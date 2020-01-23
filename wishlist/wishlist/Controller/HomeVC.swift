@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import CoreData
+
+//For CoreData
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
 
 class HomeVC: UIViewController {
     //MARK: IBOutlets
@@ -74,6 +78,44 @@ class HomeVC: UIViewController {
         view.endEditing(true)
     }
     
+    func clearFields() {
+        wageTextfield.text = ""
+        priceTextfield.text = ""
+        updateCalcBtn(isEnabled: false)
+        
+        hoursLabel.text = "0"
+        updateSaveBtn(isHidden: true)
+        
+        updateClearBtnState(isHidden: true)
+        
+        endEditing()
+    }
+    
+    func saveProduct(withName name: String, forPrice price: String, andWage wage: String, resultHour hours: String, completion: @escaping CompletionHandler) {
+        guard let productWage = Int32(wage) else { return }
+        guard let productPrice = Int32(price) else { return }
+        guard let productHours = Int32(hours) else { return }
+        let productName = name
+        
+        guard let context = appDelegate?.persistentContainer.viewContext else { return }
+        
+        let newProduct = Product(context: context)
+        newProduct.name = productName
+        newProduct.wage = productWage
+        newProduct.price = productPrice
+        newProduct.hours = productHours
+        
+        do {
+            try context.save()
+            print("Succefully saved")
+            completion(true)
+            
+        } catch {
+            debugPrint(error.localizedDescription)
+            completion(false)
+        }
+    }
+    
     //MARK: IBActions
     @IBAction func calculateBtnPressed(_ sender: Any) {
         endEditing()
@@ -86,19 +128,34 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func saveBtnPressed(_ sender: Any) {
+        let alertController = UIAlertController(title: "Save this product", message: "Give a name to your product", preferredStyle: .alert)
         
+        alertController.addTextField { (textfield) in
+            textfield.placeholder = "Product's name"
+            textfield.textColor = UIColor.black
+        }
+        
+        let save = UIAlertAction(title: "Save", style: .default) { (alertAction) in
+            guard let textfield = alertController.textFields?[0] else { return }
+            
+            if textfield.text != "" {
+                self.saveProduct(withName: textfield.text!, forPrice: self.priceTextfield.text!, andWage: self.wageTextfield.text!, resultHour: self.hoursLabel.text!) { (success) in
+                    if success {
+                        self.clearFields()
+                    }
+                }
+            }
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alertAction) in }
+        
+        alertController.addAction(save)
+        alertController.addAction(cancel)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func clearBtnPressed(_ sender: Any) {
-        wageTextfield.text = ""
-        priceTextfield.text = ""
-        updateCalcBtn(isEnabled: false)
-        
-        hoursLabel.text = "0"
-        updateSaveBtn(isHidden: true)
-        
-        updateClearBtnState(isHidden: true)
-        
-        endEditing()
+        clearFields()
     }
 }
