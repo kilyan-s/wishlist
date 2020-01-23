@@ -36,15 +36,6 @@ class HomeVC: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.setNeedsStatusBarAppearanceUpdate()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     func updateClearBtnState(isHidden: Bool) {
         clearBtn.isHidden = isHidden
         clearBtn.isEnabled = !isHidden

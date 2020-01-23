@@ -21,7 +21,7 @@ class NavigationController: UINavigationController {
             //return the status property of each VC, look at step 2
             return topVC.preferredStatusBarStyle
         }
-        return .default
+        return .lightContent
     }
 
 }
