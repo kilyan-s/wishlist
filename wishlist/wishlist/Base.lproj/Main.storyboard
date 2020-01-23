@@ -12,7 +12,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="wishlist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="750.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WpF-sT-mfs" customClass="RoundCornerView" customModule="wishlist" customModuleProvider="target">
@@ -133,7 +133,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yth-Wa-PLi">
-                                <rect key="frame" x="97" y="729" width="220" height="45"/>
+                                <rect key="frame" x="97" y="671.5" width="220" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="Vam-G9-jji"/>
                                     <constraint firstAttribute="height" constant="45" id="v2c-ll-aCW"/>
@@ -160,7 +160,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Wishlist" id="cFP-0K-sWQ"/>
+                    <navigationItem key="navigationItem" title="Wishlist" largeTitleDisplayMode="always" id="cFP-0K-sWQ">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="organize" id="7dy-Xo-Acr">
+                            <color key="tintColor" red="0.28627450980392155" green="0.29019607843137252" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="calculateBtn" destination="szx-SY-L4O" id="Yux-eu-Deu"/>
                         <outlet property="clearBtn" destination="Yth-Wa-PLi" id="cQh-ie-GLR"/>
@@ -179,8 +183,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cIu-f0-dW8" customClass="NavigationController" customModule="wishlist" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="0by-CH-yac">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="0by-CH-yac">
+                        <rect key="frame" x="0.0" y="44" width="414" height="101.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -188,6 +192,11 @@
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="40"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
