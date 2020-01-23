@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3119CA2923D916C100DADF0C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3119CA2823D916C100DADF0C /* Calculator.swift */; };
+		3119CA2B23D91C7100DADF0C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3119CA2A23D91C7100DADF0C /* NavigationController.swift */; };
 		317D3D1323D8D4E000B15A11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3D1223D8D4E000B15A11 /* AppDelegate.swift */; };
 		317D3D1523D8D4E000B15A11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3D1423D8D4E000B15A11 /* SceneDelegate.swift */; };
 		317D3D1723D8D4E000B15A11 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317D3D1623D8D4E000B15A11 /* HomeVC.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3119CA2823D916C100DADF0C /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		3119CA2A23D91C7100DADF0C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		317D3D0F23D8D4E000B15A11 /* wishlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wishlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		317D3D1223D8D4E000B15A11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		317D3D1423D8D4E000B15A11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3119CA2723D916A100DADF0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3119CA2823D916C100DADF0C /* Calculator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		317D3D0623D8D4E000B15A11 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +74,7 @@
 		317D3D1123D8D4E000B15A11 /* wishlist */ = {
 			isa = PBXGroup;
 			children = (
+				3119CA2723D916A100DADF0C /* Model */,
 				317D3D2A23D8D6C800B15A11 /* View */,
 				317D3D2923D8D6C100B15A11 /* Controller */,
 				317D3D1223D8D4E000B15A11 /* AppDelegate.swift */,
@@ -88,6 +101,7 @@
 			children = (
 				3199300023D8EB9B008738DD /* RoundCornerView.swift */,
 				3199300223D8EC82008738DD /* RoundedButton.swift */,
+				3119CA2A23D91C7100DADF0C /* NavigationController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,7 +178,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				317D3D1D23D8D4E000B15A11 /* wishlist.xcdatamodeld in Sources */,
+				3119CA2B23D91C7100DADF0C /* NavigationController.swift in Sources */,
 				3199300323D8EC82008738DD /* RoundedButton.swift in Sources */,
+				3119CA2923D916C100DADF0C /* Calculator.swift in Sources */,
 				317D3D1723D8D4E000B15A11 /* HomeVC.swift in Sources */,
 				317D3D1323D8D4E000B15A11 /* AppDelegate.swift in Sources */,
 				317D3D1523D8D4E000B15A11 /* SceneDelegate.swift in Sources */,

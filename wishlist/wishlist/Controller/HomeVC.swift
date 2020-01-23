@@ -36,6 +36,15 @@ class HomeVC: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     func updateClearBtnState(isHidden: Bool) {
         clearBtn.isHidden = isHidden
         clearBtn.isEnabled = !isHidden
@@ -57,7 +66,6 @@ class HomeVC: UIViewController {
     }
     
     @objc func textfieldValueDidChange() {
-        print("textfieldValueDidChange")
         if wageTextfield.text != "" && priceTextfield.text != "" {
             updateCalcBtn(isEnabled: true)
         } else {
@@ -68,15 +76,26 @@ class HomeVC: UIViewController {
     }
     
     @objc func viewTapped() {
+        endEditing()
+    }
+    
+    func endEditing() {
         view.endEditing(true)
     }
     
     //MARK: IBActions
     @IBAction func calculateBtnPressed(_ sender: Any) {
-        print("calculateBtnPressed")
+        endEditing()
+        
+        if let wage = wageTextfield.text, let price = priceTextfield.text {
+            let result = Calculator.getHours(forWage: wage, andPrice: price)
+            hoursLabel.text = result
+            updateSaveBtn(isHidden: false)
+        }
     }
     
     @IBAction func saveBtnPressed(_ sender: Any) {
+        
     }
     
     @IBAction func clearBtnPressed(_ sender: Any) {
@@ -88,6 +107,7 @@ class HomeVC: UIViewController {
         updateSaveBtn(isHidden: true)
         
         updateClearBtnState(isHidden: true)
+        
+        endEditing()
     }
-    
 }
