@@ -61,6 +61,27 @@ extension MyProductsVC: UITableViewDelegate, UITableViewDataSource {
         cell.configureView(withName: product.name!, andWage: product.wage, forPrice: product.price, andResultHours: product.hours)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (contextualAction, view, bool) in
+            self.deleteProduct(atIndexPath: indexPath)
+            self.fetchProductData()
+        }
+        deleteAction.backgroundColor = UIColor(hexString: "#eb4d4b")
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+        
+        
+        return swipeConfiguration
+    }
 }
 
 //CoreData functions
@@ -77,6 +98,18 @@ extension MyProductsVC {
         } catch {
             debugPrint(error.localizedDescription)
             completion(false)
+        }
+    }
+    
+    func deleteProduct(atIndexPath indexPath: IndexPath) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        managedContext.delete(products[indexPath.row])
+        
+        do {
+            try managedContext.save()
+            print("Successfully save data")
+        } catch {
+            debugPrint(error.localizedDescription)
         }
     }
 }
