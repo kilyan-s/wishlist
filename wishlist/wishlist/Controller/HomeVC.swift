@@ -132,7 +132,7 @@ class HomeVC: UIViewController {
         
         alertController.addTextField { (textfield) in
             textfield.placeholder = "Product's name"
-            textfield.textColor = UIColor.black
+            //textfield.textColor = UIColor.white
         }
         
         let save = UIAlertAction(title: "Save", style: .default) { (alertAction) in
